@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge 1</title> 					<!-- Title description on the tab -->
+</head>
+<body>
+<p id="ex1"></p>							<!-- Paragraph tag tracked by attribute id -->
+
+
+<script>
+	function revInt(n) {					//beginning of function revInt to Reverse Number passed as a parameter (n)
+		var n = prompt("Enter a sentence")		//Window prompted to get value from the user and assignt it to n 	
+		var words
+		var min
+		
+		if (n != ""){
+			
+			words = n.split(" ")
+			min = words[0].length
+			for (var i = 0; i < words.length; i++) {
+				if (words[i].length < min){
+					min = words[i].length
+				}
+				else {
+				  min
+				}
+				
+			}
+			
+			return min		
+			
+		}
+		else {
+			
+			alert("Invalid Entry")
+			return revInt(n)
+		}		
+	}
+
+	
+	document.getElementById("ex1").innerHTML = "The length of the smallest word is:  " + revInt();
+	
+</script>
+</body>
+</html>

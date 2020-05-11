@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge 1</title> 					<!-- Title description on the tab -->
+</head>
+<body>
+<p id="ex1"></p>							<!-- Paragraph tag tracked by attribute id -->
+
+
+<script>
+	function revInt(n) {					//beginning of function revInt to Reverse Number passed as a parameter (n)
+		var n = prompt("Enter a value")		//Window prompted to get value from the user and assignt it to n 	
+		
+		if (n >= 0){
+			return (n.toString().split('').reverse().join(''))
+		}
+		else {
+			alert("Please enter a positive number")
+			n = prompt("Enter a value")
+		}		
+	}
+
+
+	document.getElementById("ex1").innerHTML = "Reversed number is:  " + revInt();
+	
+</script>
+</body>
+</html>
