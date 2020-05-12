@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Challenge 3</title> 
+<title>Challenge 3</title> 											<!-- Title description on the webbrowser tab -->
 </head>
 <body>
 
-<h3>Given a number return the sum of all the multiples of 3 or 5 below the given number:</h3>		
-<input type="text" id="myText" placeholder="Enter an number">
-<p id="ex1"></p>				
-<button type=submit onclick = "multiplesofThreeAndFive()">Submit</button>
+<h3>The sum of all the multiples of 3 or 5 of a given number:</h3>	<!-- Fixed header h3-->
+<input type="text" id="myText" placeholder="Enter a number">		<!-- Fill in the blank-->
+<p id="ex1"></p>													<!-- Paragraph tag tracked by attribute id -->
+<button type=submit onclick = "multiplesofThreeAndFive()">Submit</button> <!-- Button to activate the main function-->
 
 <script>
 
-function multiplesofThreeAndFive(number) {
-var number = document.getElementById("myText").value;
-let sum = 0;
-  for (let i = 0; i < number; i++) {
+	function multiplesofThreeAndFive(n) {			
+		var n = document.getElementById("myText").value;		//Value imported by Id from user input in line 11
+		let sum = 0;	//let is a block scoped variable. var would be better used, once the variable will vary during the program execution
+		for (var i = 0; i < n; i++) {							//for loop to keep track of every number from 0-(n)
 
-    if (i % 3 === 0 || i % 5 === 0) {
-      sum += i;
-    }
-  }
-  return document.getElementById("ex1").innerHTML = "The output is:  " + sum;
+		if (i % 3 === 0 || i % 5 === 0) {						//If statement to filter only the numbers multiples of 3 and 5
+		sum += i;												//increment operator to sum the numbers that fit the criteria
+		}
+		}
+		return document.getElementById("ex1").innerHTML = "The output is:  " + sum;//return of the sum of multiples of 3 and 5
  
-}
+	}
 
 </script>
 </body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge 5</title> 												<!-- Title description on the tab -->
+</head>
+<body>
+<p id="ex1"></p>														<!-- Paragraph tag tracked by attribute id -->
+
+
+<script>
+	function revInt(n) { //beginning of function revInt to Reverse Number passed as a parameter (n)
+		var n = prompt("Enter a number to be reversed")//Window prompted to get value from the user and assignt it to (n) 	
+		
+		if (n >= 0){ //Statement to validate only non-negative numbers
+			return (n.toString().split('').reverse().join(''))//returning function that splits up the string into words, and put them back together reversed
+		}
+		else { //Statement for values oposite to non-negative numbers 
+			alert("Please enter a non-negative number") //Alert displayed to the user for understanding of the criterias 
+			n = prompt("Enter a number to be reversed") //Window reprompted with the same functionality as in line 14
+		}		
+	}
+
+
+	document.getElementById("ex1").innerHTML = "Reversed number is:  " + revInt(); //Calling the function to return the expected result
+	
+</script>
+</body>
+</html>

@@ -3,55 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Challenge 3</title> 	
+<title>Challenge 4</title> 											<!-- Title description on the webbrowser tab -->
 </head>
 <body>
 
-<h3>Organizing the Array: </h3>		
-<input type="text" id="myText" placeholder="Enter information">
-<p id="ex1"></p>				
-<button type=submit onclick = "addToArray()">Add</button>
-<button type=submit onclick = "organizeArray()">Organize</button>
+<h3>Moving Zeros to the end of the array: </h3>		
+<input type="text" id="myText" placeholder="Enter each array element ">		<!-- Fill in the blank-->
+<p id="ex1"></p>													<!-- Paragraph tag tracked by attribute id -->
+<button type=submit onclick = "addToArray()">Add</button>			<!-- Button to call the function that adds elements to the array -->
+<button type=submit onclick = "organizeArray()">Organize Zeros</button><!-- Button to call the function that moves the zeros of the array-->
 <script>
-
-	/*var x = 0;
-	var arr = Array();*/
 	
-	var arr = [];
+	var arr = [];								//Array declared outside the function, so the values remain the same for both functions
 
-	function addToArray(){
+	function addToArray(){											//Function to add elements individually to the array
 		
-		
-		arr.push(document.getElementById("myText").value);
-		document.getElementById("ex1").innerHTML = arr;
-		document.getElementById("myText").value = "";
+		if (document.getElementById("myText").value != ""){			//if statement to filter non-empty results
+			arr.push(document.getElementById("myText").value);		//Declaration to push the users input into the array
+			document.getElementById("ex1").innerHTML = arr;			//Printing the array values into the paragraph tracked by Id
+			document.getElementById("myText").value = "";			//Making the field blank again, so the user can reenter a new value
+		}
+		else{
+			document.getElementById("myText").value = "";			//if null input, then reentry a valid input
+		}
 	}
 
-	function organizeArray(){
+	function organizeArray(){										//Function to move the zeros to the end of the array
 	  
-		var j = 0
+		var j = 0													//non-zero elements counter j
 		
-		for (var i = 0; i < arr.length; i++) {
-			if (arr[i] != 0){
-				arr[j++] = arr[i]
-			}
+		for (var i = 0; i < arr.length; i++) {						//for loop to keep track of every element from 0-arr.length
+			if (arr[i] != 0){										//if statement to filter non-zero values
+				arr[j++] = arr[i]									//incrementing the count of non-zero elements
+			}														//non-zero elements are shifted to the front of the array
 		}
-		while (j < arr.length){
+		while (j < arr.length){										//counter j has index of first 0
 					arr[j++] = 0
 					
 				}
 		
-		return document.getElementById("ex1").innerHTML = "The array with zeros at the end:  " + arr;
-		
-		
+		return document.getElementById("ex1").innerHTML = "New Array:  " + arr;
+		//return of the array values with the zeros moved to the end 		
 	}	
-		
-	
-
-
-	
-	
-	
+			
 </script>
 </body>
 </html>

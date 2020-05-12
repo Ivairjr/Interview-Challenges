@@ -3,44 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Challenge 1</title> 					<!-- Title description on the tab -->
+<title>Challenge 2</title> 					<!-- Title description on the webbrowser tab -->
 </head>
 <body>
 <p id="ex1"></p>							<!-- Paragraph tag tracked by attribute id -->
 
 
 <script>
-	function lengthCounter(n) {					//beginning of function revInt to Reverse Number passed as a parameter (n)
-		var n = prompt("Enter a sentence")		//Window prompted to get value from the user and assignt it to n 	
-		var words
-		var min
+	function lengthCounter(n) {					//beginning of function lengthCounter to count the length of each word in a sentence
+		var n = prompt("Enter a sentence")		//Window prompted to get the sentence from the user and assignt it to n 	
+		var words								//var-array to hold of each word individually
+		var min									//Minimum value pre defined to hold initial value
 		
-		if (n != ""){
+		if (n != ""){							//If statement to filter non-empty numbers
 			
-			words = n.split(" ")
-			min = words[0].length
-			for (var i = 0; i < words.length; i++) {
-				if (words[i].length < min){
-					min = words[i].length
+			words = n.split(" ")				//function to split the words and put them into the array 
+			min = words[0].length				//Assigning the first value of the array into for var min, for comparison purposes
+			for (var i = 0; i < words.length; i++) { //Beginning of for loop to walk through every word in the array from 0-length
+				while (words[i].length < min){		//While will run as long as the length of the next value in the array is smaller than var mindefined to the next values in order to find the smallest
+					min = words[i].length		//If the next value in the array has a smaller lenght, then the var min assumes the new value
 				}
-				else {
-				  min
-				}
+				
 				
 			}
 			
-			return min		
+			return min							//Return of the var min that holds the smalles length among the words from the full sentence
 			
 		}
-		else {
-			
-			alert("Invalid Entry")
-			return lengthCounter(n)
+		else {									//Statement for empty or null values
+					
+			alert("Invalid Entry")				//Alert prompted for the user in oder to fix it and fit the criterias
+			return lengthCounter(n)				//return to the beginning of the function for a new entry that fits the criterias
 		}		
 	}
 
 	
-	document.getElementById("ex1").innerHTML = "The length of the smallest word is:  " + lengthCounter();
+	document.getElementById("ex1").innerHTML = "The length of the smallest word is:  " + lengthCounter(); //function call and print of the expected result
 	
 </script>
 </body>
