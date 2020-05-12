@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Challenge 3</title> 	
+</head>
+<body>
+
+<h3>Organizing the Array: </h3>		
+<input type="text" id="myText" placeholder="Enter information">
+<p id="ex1"></p>				
+<button type=submit onclick = "addToArray()">Add</button>
+<button type=submit onclick = "organizeArray()">Organize</button>
+<script>
+
+	/*var x = 0;
+	var arr = Array();*/
+	
+	var arr = [];
+
+	function addToArray(){
+		
+		
+		arr.push(document.getElementById("myText").value);
+		document.getElementById("ex1").innerHTML = arr;
+		document.getElementById("myText").value = "";
+	}
+
+	function organizeArray(){
+	  
+		var j = 0
+		
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] != 0){
+				arr[j++] = arr[i]
+			}
+		}
+		while (j < arr.length){
+					arr[j++] = 0
+					
+				}
+		
+		return document.getElementById("ex1").innerHTML = "The organized array:  " + arr;
+		
+		
+	}	//document.getElementById("").innerHTML = e;
+		
+	
+
+
+	
+	
+	
+</script>
+</body>
+</html>
